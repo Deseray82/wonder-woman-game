@@ -1,0 +1,10 @@
+scene.onOverlapTile(SpriteKind.Player, sprites.builtin.oceanDepths0, function (sprite, location) {
+    game.over(true)
+})
+let mySprite = sprites.create(assets.image`Pinky`, SpriteKind.Player)
+controller.moveSprite(mySprite, 120, 120)
+scene.setBackgroundColor(8)
+tiles.setTilemap(tilemap`level 1`)
+tiles.placeOnRandomTile(mySprite, sprites.builtin.oceanSand14)
+info.startCountdown(25)
+scene.cameraFollowSprite(mySprite)
